@@ -1,0 +1,113 @@
+.loading-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--slate-950);
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.loading-bg .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: float 15s ease-in-out infinite;
+}
+
+.loading-bg .orb-1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(168, 85, 247, 0.2);
+    top: -100px;
+    right: -100px;
+}
+
+.loading-bg .orb-2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(99, 102, 241, 0.2);
+    bottom: -100px;
+    left: -100px;
+    animation-delay: -7s;
+}
+
+.loading-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.loading-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.logo-icon-loading {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-glow);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    box-shadow: var(--shadow-neon);
+}
+
+.logo-text-loading {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+}
+
+.loading-bar-fill {
+    width: 40%;
+    height: 100%;
+    background: var(--gradient-glow);
+    border-radius: var(--radius-full);
+    animation: loading-progress 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-progress {
+    0% {
+        width: 0%;
+        margin-left: 0;
+    }
+
+    50% {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    100% {
+        width: 0%;
+        margin-left: 100%;
+    }
+}
+
+.loading-text {
+    font-size: 1rem;
+    color: var(--slate-400);
+    letter-spacing: 0.5px;
+}
